@@ -1,0 +1,11 @@
+{
+  "name": "server-practice",
+  "version": "1.0.0",
+  "description": "My node server practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "James Hooper",
+  "license": "ISC"
+}
