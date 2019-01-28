@@ -4,8 +4,13 @@
   "description": "My node server practice",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "start": "node app.js"
   },
   "author": "James Hooper",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.7"
+  }
 }
