@@ -1,41 +1,21 @@
-const { Product, Pokemon } = require('../models/product.model')
+const Pokemon = require('../models/product.model')
 
-exports.test = (req, res, next) => {
+// Simple versiom with no validation or sanitation
+exports.test = (req, res) => {
     res.send('Greetings from the test controller!')
-}
-
-exports.product_create = (req, res, next) => {
-    let product = new Product({
-        name: req.body.name,
-        price: req.body.price,
-    })
-
-    product.save((err) => {
-        if (err) {
-            return next(err)
-        }
-        res.send('Product created successfully')
-    })
-}
-
-exports.product_update = (req, res, next) => {
-    Product.findByIdAndUpdate(req.params.id, { $set: req.body},
-        (err, product) => {
-        if (err) return next(err)
-        res.send('Product updated')
-    })
 }
 
 exports.pokemon_create = (req, res, next) => {
     let pokemon = new Pokemon({
         name: req.body.name,
-        url: req.body.url,
+        price: req.body.price,
     })
 
-    pokemon.save(function(err) {
-        if(err) {
+    pokemon.save(function(err) => {
+        if (err) {
             return next(err)
         }
-        res.send('Pokemon created!')
+        res.send('Pokemon created successfully')
     })
 }
+

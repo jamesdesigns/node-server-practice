@@ -1,6 +1,8 @@
-const { Product, Pokemon } = require('../models/product.model')
+const Product = require('../models/product.model')
+const Pokemon = require('../models/pokemon.model')
 
-exports.test = (req, res, next) => {
+// Simple version with no validation or sanitation
+exports.test = (req, res) => {
     res.send('Greetings from the test controller!')
 }
 
@@ -10,19 +12,11 @@ exports.product_create = (req, res, next) => {
         price: req.body.price,
     })
 
-    product.save((err) => {
+    product.save(function(err) => {
         if (err) {
             return next(err)
         }
         res.send('Product created successfully')
-    })
-}
-
-exports.product_update = (req, res, next) => {
-    Product.findByIdAndUpdate(req.params.id, { $set: req.body},
-        (err, product) => {
-        if (err) return next(err)
-        res.send('Product updated')
     })
 }
 
@@ -32,11 +26,32 @@ exports.pokemon_create = (req, res, next) => {
         url: req.body.url,
     })
 
+
     pokemon.save(function(err) {
-        if(err) {
+        if (err) {
             return next(err)
         }
         res.send('Pokemon created!')
+    })
+} 
+
+
+exports.product_update = (req, res, next) => {
+    Product.findByIdAndUpdate(
+        req.params.id,
+        { $set: req.body },
+        (err, product) => {
+            if (err) return next(err)
+            res.send('Product updated.')
+        },
+    )
+}
+
+
+exports.product)_delete = (req, res, next) => {
+    Product.findByIdAndRemove(req.params.id, (err) => {
+        if (err) return next(err)
+        res.send('Deleted successfully')
     })
 }
 
