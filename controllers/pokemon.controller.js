@@ -39,4 +39,3 @@ exports.pokemon_create = (req, res, next) => {
         res.send('Pokemon created!')
     })
 }
-

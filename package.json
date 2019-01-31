@@ -4,7 +4,8 @@
   "description": "My node server practice",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "start-dev": "node seed/populate.js"
   },
   "author": "James Hooper",
   "license": "ISC",
@@ -12,5 +13,9 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.7"
+  },
+  "devDependencies": {
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.9"
   }
 }
