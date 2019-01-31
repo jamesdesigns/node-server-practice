@@ -11,7 +11,7 @@ exports.pokemon_create = (req, res, next) => {
         price: req.body.price,
     })
 
-    pokemon.save(function(err) => {
+    pokemon.save(function(err) {
         if (err) {
             return next(err)
         }

@@ -4,6 +4,7 @@
   "description": "My node server practice",
   "main": "app.js",
   "scripts": {
+    "test": "test"
     "start": "nodemon app.js",
     "start-dev": "node seed/populate.js"
   },

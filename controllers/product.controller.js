@@ -12,7 +12,7 @@ exports.product_create = (req, res, next) => {
         price: req.body.price,
     })
 
-    product.save(function(err) => {
+    product.save(function(err) {
         if (err) {
             return next(err)
         }
@@ -48,7 +48,7 @@ exports.product_update = (req, res, next) => {
 }
 
 
-exports.product)_delete = (req, res, next) => {
+exports.product_delete = (req, res, next) => {
     Product.findByIdAndRemove(req.params.id, (err) => {
         if (err) return next(err)
         res.send('Deleted successfully')
