@@ -16,9 +16,9 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=25')
   const postData = (url = ``, data = {}) => {
     // Default options are marked with *
       return fetch(url, {
-          method: "POST", 
+          method: 'POST', 
           headers: {
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
           },
 
           body: JSON.stringify(data), 

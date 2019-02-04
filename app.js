@@ -13,7 +13,7 @@ const db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const product = require('./routes/product.route')
-const pokemon = require('/routes/pokemon.route')
+const pokemon = require('./routes/pokemon.route')
 
 
 const app = express()

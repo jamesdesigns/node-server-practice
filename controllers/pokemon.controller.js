@@ -1,6 +1,6 @@
 const Pokemon = require('../models/product.model')
 
-// Simple versiom with no validation or sanitation
+// Simple version with no validation or sanitation
 exports.test = (req, res) => {
     res.send('Greetings from the test controller!')
 }
