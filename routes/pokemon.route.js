@@ -12,4 +12,6 @@ router.post('/pokemon', pokemon_controller.pokemon_create)
 // router.put('/:id/update', product_controller.product_update)
 // router.delete('/:id/delete', product_controller.product.delete )
 
+// router.delete('/:id/delete', pokemon_controller.pokemon_delete)
+
 module.exports = router
