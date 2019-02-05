@@ -3,7 +3,7 @@ const router = express.Router()
 
 const pokemon_controller = require('../controllers/pokemon.controller')
 
-router.get('/test', pokemon_controller.test)
+// router.get('/test', pokemon_controller.test)
 
 // router.post('/create', product_controller.product_create)
 

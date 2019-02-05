@@ -8,7 +8,7 @@ exports.test = (req, res) => {
 exports.pokemon_create = (req, res, next) => {
     let pokemon = new Pokemon({
         name: req.body.name,
-        price: req.body.price,
+        url: req.body.url,
     })
 
     pokemon.save(function(err) {
