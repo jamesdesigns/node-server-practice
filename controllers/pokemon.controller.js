@@ -1,4 +1,4 @@
-const Pokemon = require('../models/product.model')
+const Pokemon = require('../models/pokemon.model')
 
 // Simple version with no validation or sanitation
 exports.test = (req, res) => {
