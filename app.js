@@ -10,10 +10,9 @@ const mongoDB = process.env.MONGODB_URI || dev_db_url
 mongoose.connect(mongoDB, {useNewUrlParser: true})
 mongoose.Promise = global.Promise
 const db = mongoose.connection
-
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const product = require('./routes/product.route')
+const product = require('./routes/product.route') // imports routes for the products
 const pokemon = require('./routes/pokemon.route')
 
 

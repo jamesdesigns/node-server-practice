@@ -15,7 +15,7 @@ exports.pokemon_create = (req, res, next) => {
         if (err) {
             return next(err)
         }
-        res.send('Pokemon created successfully')
+        res.send('Pokemon created!')
     })
 }
 

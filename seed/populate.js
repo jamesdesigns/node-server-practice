@@ -1,12 +1,11 @@
 const fetch = require('node-fetch')
 
-
 fetch('https://pokeapi.co/api/v2/pokemon?limit=25')
   .then(res => res.json())
   .then(myJson => {
     const pokeArray = myJson.results
     pokeArray.forEach(pokemon => {
-    postData(`http://localhost:5775/products/pokemon`, pokemon)
+    postData(`http://localhost:5775/pokemon/pokemon`, pokemon)
   .then(data => console.log(data)) 
   .catch(error => console.error(error))
   })
@@ -18,9 +17,8 @@ fetch('https://pokeapi.co/api/v2/pokemon?limit=25')
       return fetch(url, {
           method: 'POST', 
           headers: {
-              'Content-Type': 'application/json',
+              'Content-Type': 'application/json'
           },
-
-          body: JSON.stringify(data), 
+          body: JSON.stringify(data) 
       }).then(response => response.text()) 
   }
