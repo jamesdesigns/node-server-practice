@@ -1,5 +1,6 @@
 const Product = require('../models/product.model')
 const Pokemon = require('../models/pokemon.model')
+const Spacex = require('../models/spacex.model')
 
 // Simple version with no validation or sanitation
 exports.test = (req, res) => {
@@ -46,7 +47,6 @@ exports.product_update = (req, res, next) => {
         },
     )
 }
-
 
 exports.product_delete = (req, res, next) => {
     Product.findByIdAndRemove(req.params.id, (err) => {

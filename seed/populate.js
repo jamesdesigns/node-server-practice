@@ -12,26 +12,23 @@ const fetch = require('node-fetch')
 // }) 
 
 // fetch('https://api.spacexdata.com/v3/launches?limit=25')
-fetch('https://api.https://api.spacexdata.com/v3/launches/?pretty=true&limit=25')
+fetch('https://api.spacexdata.com/v3/launches/?pretty=true&limit=25')
 .then(res => res.json())
 .then(myJson => {
   const spacexArray = myJson.results
   spacexArray.forEach(spacex => {
-    // postData(`http://localhost:5775/spacex/spacex`, spacex)
-    // .then(data => console.log(data))
-    // .catch(error => console.log(error))
+
 
     let surl = spacex.url
     fetch(surl)
     .then(result => result.json())
     .then(fullSpacex => {
       return newSpacex = {
-        mission_name: fullSpacex.mission_name,
+        id: fullSpacex.id,
+        flight_id: fullSpacex.flight_id,
+        flight_number: fullSpacex.flight_number,
         launch_year: fullSpacex.launch_year,
         launch_success: fullSpacex.launch_success,
-        details: fullSpacex.details,
-        // links: surl,
-        // sprite: fullSpacex.mission_patch_small
       }
     })
     .then(newOne => {
