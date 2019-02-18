@@ -12,7 +12,7 @@ const fetch = require('node-fetch')
 // }) 
 
 // fetch('https://api.spacexdata.com/v3/launches?limit=25')
-fetch('https://api.spacexdata.com/v3/launches/?pretty=true&limit=25')
+fetch('https://api.spacexdata.com/v3/launches/?limit=25')
 .then(res => res.json())
 .then(myJson => {
   const spacexArray = myJson.results
@@ -49,6 +49,6 @@ fetch('https://api.spacexdata.com/v3/launches/?pretty=true&limit=25')
           },
           body: JSON.stringify(data) 
       // }).then(response => response.text()
-        }),then(responsoe => Response.json()
+        }).then(responsoe => Response.json()
       ) 
   }
